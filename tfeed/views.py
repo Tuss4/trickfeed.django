@@ -1,4 +1,43 @@
 from django.http import HttpResponse
+import gdata.docs.service
+import gdata.youtube
+import gdata.youtube.service
+def docs(request):
+	client = gdata.docs.service.DocsService()
+	client.ClientLogin('tuss4dbfn@gmail.com','tomjos')
+	documents_feed = client.GetDocumentListFeed()
+	dlist = []
+	for document_entry in documents_feed.entry:
+		dlist.append(document_entry.title.text+"<br>")
+	return HttpResponse(dlist)
+
+
+def trick(request):
+	yt_service = gdata.youtube.service.YouTubeService()
+
+	yt_service.ssl = True
+
+	yt_service.developer_key = 'AIzaSyDCDSuNggEx-ouiWg5hKxPmf3b09SrKRBA'
+	yt_service.client_id = '861387077789.apps.googleusercontent.com'
+	def PrintEntryDetails(entry):
+		vT = 'Video title: %s' % entry.media.title.text
+		vU = 'Video flash player URL: %s' % entry.GetSwfUrl()
+	def PrintVideoFeed(feed):
+		for entry in feed.entry:
+			PrintEntryDetails(entry)
+	def SearchAndPrintVideosByKeywords(list_of_search_terms):
+		yt_service = gdata.youtube.service.YouTubeVideoQuery()
+		query = gdata.youtube.service.YouTubeVideoQuery()
+		query.orderby = 'published'
+		query.racy = 'include'
+		for search_term in list_of_search_terms:
+			new_term = search_term.lower()
+			query.categories.append('/%s' % new_term)
+		feed = yt_service.YouTubeQuery(query)
+		PrintVideoFeed(feed)
+
+	t = "Welcome to trickFEED"
+	return HttpResponse(SearchAndPrintVideosByKeywords(["tricking"]))
 def hello(request):
 	theater = """<!DOCTYPE html>
 <html>
