@@ -2,15 +2,6 @@ from django.http import HttpResponse
 import gdata.docs.service
 import gdata.youtube
 import gdata.youtube.service
-def docs(request):
-	client = gdata.docs.service.DocsService()
-	client.ClientLogin('','')
-	documents_feed = client.GetDocumentListFeed()
-	dlist = []
-	for document_entry in documents_feed.entry:
-		dlist.append(document_entry.title.text+"<br>")
-	return HttpResponse(dlist)
-
 
 def trick(request):
 	a = []

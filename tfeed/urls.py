@@ -1,13 +1,11 @@
 from django.conf.urls import patterns, include, url
-from tfeed.views import trick, docs
+from tfeed.views import trick
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-	url(r'^tricks/$', trick),
-	url(r'^docs/$', docs),
 	url(r'^$', trick),
     # Examples:
     # url(r'^$', 'tfeed.views.home', name='home'),
