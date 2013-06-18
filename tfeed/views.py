@@ -4,7 +4,7 @@ import gdata.youtube
 import gdata.youtube.service
 def docs(request):
 	client = gdata.docs.service.DocsService()
-	client.ClientLogin('tuss4dbfn@gmail.com','tomjos')
+	client.ClientLogin('','')
 	documents_feed = client.GetDocumentListFeed()
 	dlist = []
 	for document_entry in documents_feed.entry:
