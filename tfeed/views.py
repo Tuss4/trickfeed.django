@@ -18,7 +18,7 @@ def trick(request):
 		yt_service = gdata.youtube.service.YouTubeService()
 		feed = yt_service.GetYouTubeVideoFeed(uri)
 		for entry in feed.entry:
-			a.append(entry.media.title.text+"<br />")
+			a.append("<a href='"+entry.GetSwfUrl()+"'>"+entry.media.title.text+"</a><br />")
 	datafeed = "http://gdata.youtube.com/feeds/api/videos?q=tricking&orderby=published&category=tricking&max-results=30"
 	GetAndPrintVideoFeed(datafeed)
 	return HttpResponse(a)
