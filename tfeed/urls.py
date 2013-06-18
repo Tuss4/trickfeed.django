@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from tfeed.views import hello, trick, docs
+from tfeed.views import trick, docs
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -8,7 +8,7 @@ from tfeed.views import hello, trick, docs
 urlpatterns = patterns('',
 	url(r'^tricks/$', trick),
 	url(r'^docs/$', docs),
-	url(r'^$', hello),
+	url(r'^$', trick),
     # Examples:
     # url(r'^$', 'tfeed.views.home', name='home'),
     # url(r'^tfeed/', include('tfeed.foo.urls')),
