@@ -14,9 +14,6 @@ def docs(request):
 
 def trick(request):
 	a = []
-	def PrintEntryDetails(entry):
-		return 'Video title: '+entry.media.title.text+'<br />Video flash player URL: '+entry.GetSwfUrl()+' <br />'
-		
 	def GetAndPrintVideoFeed(uri):
 		yt_service = gdata.youtube.service.YouTubeService()
 		feed = yt_service.GetYouTubeVideoFeed(uri)
