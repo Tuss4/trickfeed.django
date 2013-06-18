@@ -1,5 +1,4 @@
 from django.http import HttpResponse
-import gdata.docs.service
 import gdata.youtube
 import gdata.youtube.service
 
