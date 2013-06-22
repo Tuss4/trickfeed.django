@@ -108,6 +108,7 @@ ROOT_URLCONF = 'tfeed.urls'
 WSGI_APPLICATION = 'tfeed.wsgi.application'
 
 TEMPLATE_DIRS = (
+    '/home/tuss4/Documents/trickfeed.django/tfeed/tfeed/templates',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

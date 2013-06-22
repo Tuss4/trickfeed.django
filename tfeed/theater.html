@@ -21,7 +21,7 @@
 					entries = data.feed.entry[i];
 					vidId = entries.id.$t.substring(27,38);
 					vidT = entries.title.$t;
-					output += "<a onclick=changeThisId('"+vidId+"')><li id='"+vidId+"'><img src='"+entries.media$group.media$thumbnail[1].url+"' alt='"+entries.title.$t+"' title='"+entries.title.$t+"' /></li></a>";
+					output += "<a onclick=changeThisId('"+entries.media$group.yt$videoid.$t+"')><li id='"+vidId+"'><img src='"+entries.media$group.media$thumbnail[1].url+"' alt='"+entries.title.$t+"' title='"+entries.title.$t+"' /></li></a>";
 					document.getElementById("vT").innerHTML = vidT;
 				}
 				output += "</ul>";
