@@ -9,6 +9,7 @@ urlpatterns = patterns('',
 	url(r'^$', 'tfeed.views.trick'),
 	url(r'^search/$', 'books.views.search'),
 	url(r'^contact/$', 'contact.views.contact'),
+	url(r'^success/$', 'fav.views.success'),
     # Examples:
     # url(r'^$', 'tfeed.views.home', name='home'),
     # url(r'^tfeed/', include('tfeed.foo.urls')),

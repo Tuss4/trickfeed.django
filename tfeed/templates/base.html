@@ -11,6 +11,7 @@ function getThisId(datum){
 }
 function changeThisId(datum){
 	document.getElementById("ytplayer").setAttribute("src",getThisId(datum));
+	document.getElementById("vid_fav").setAttribute("value",datum);
 }
 $(document).ready(function(){
 	$("#content li").click(function(){
@@ -33,7 +34,8 @@ $(document).ready(function(){
 		top: 0;
 		background-color: #FFF;
 		position: fixed;
-		text-align: center;
+		text-align: left;
+		padding-left: 1%;
 		box-shadow: 0px 10px 5px #999;
 	}
 	#firsthalf {
@@ -91,6 +93,12 @@ $(document).ready(function(){
 	<div id="overlay">
 		<h1>Tricking Theatre</h1>
 		<iframe id="ytplayer" width="720" height="480" src="http://www.youtube.com/embed/"></iframe>
+		<br />
+		<form action="/success/" method="get">
+			<input type="text" name="user" value="Tuss4" />
+			<input id="vid_fav" type="text" name="video_id" value="" />
+			<input type="submit" value="Add To Favorites" />
+		</form>
 		<br />
 		<button id="close">Click to Close</button>
 	</div>
