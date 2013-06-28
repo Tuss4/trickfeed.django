@@ -5,9 +5,9 @@ from fav.models import Favorite
 import datetime
 
 def success(request):
-	if request.method == 'GET':
-		f = Favorite(user = request.GET['user'],
-			video = request.GET['video_id'],
+	if request.method == 'POST':
+		f = Favorite(user = request.user.username,
+			video = request.POST['video'],
 			date = datetime.datetime.now())
 		f.save()
-		return HttpResponse("Video: "+ request.GET['video_id'] + " was added to your favorites!")
+		return HttpResponse("Video: "+ request.POST['video'] + " was added to your favorites!")
