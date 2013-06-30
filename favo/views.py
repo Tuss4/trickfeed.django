@@ -11,8 +11,9 @@ def success(request):
 		favorites = Favorite.objects.all()
 		v = request.POST['video']
 		fs = Favorite.objects.filter(video=v)
-		if fs:
-			return HttpResponse(v + " is already in the database.")
+		fu = Favorite.objects.filter(user=request.user.username)
+		if fs and fu:
+			return HttpResponse(v + " is already in your favorites.")
 		f.save()
 		return HttpResponse("Video: "+ v + " was added to your favorites!")
 
