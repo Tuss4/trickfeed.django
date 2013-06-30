@@ -6,3 +6,6 @@ class Favorite(models.Model):
 
 	def __unicode__(self):
 		return self.video
+
+	class Meta:
+		ordering = ['-id']
