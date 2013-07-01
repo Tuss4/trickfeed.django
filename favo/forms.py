@@ -1,4 +1,4 @@
 from django import forms
 
 class AddFav(forms.Form):
-	video = forms.CharField()
+	video = forms.CharField(required=False)
