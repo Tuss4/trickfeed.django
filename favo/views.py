@@ -2,7 +2,6 @@ from django.shortcuts import *
 from django.http import *
 from django.core.context_processors import csrf
 from favo.models import Favorite
-import datetime
 
 def success(request):
 	if request.method == 'POST':
